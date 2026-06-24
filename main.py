@@ -1,5 +1,6 @@
 import requests
 from datetime import datetime
+from relatorio import salvar_csv
 
 def buscar_cotacoes():
     """Busca cotações em tempo real via AwesomeAPI"""
@@ -36,3 +37,4 @@ def exibir_cotacoes(dados):
 dados = buscar_cotacoes()
 if dados:
     exibir_cotacoes(dados)
+    salvar_csv(dados)
